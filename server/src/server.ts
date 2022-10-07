@@ -1,6 +1,6 @@
-import express from "express";
-import cors from "cors";
 import { PrismaClient } from "@prisma/client";
+import cors from "cors";
+import express from "express";
 
 import { convertHourString } from "./database/utils/convertHourString";
 import { convertMinuteString } from "./database/utils/convertMinuteString";
@@ -19,6 +19,9 @@ app.get('/games', async (request, response) => {
           ads: true,
         },
       },
+    },
+    orderBy: {
+      title: 'asc',
     },
   });
 

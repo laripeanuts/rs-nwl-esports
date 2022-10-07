@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 
+import * as Dialog from "@radix-ui/react-dialog";
+
 import { GameType } from "../../@types/GameType";
 import logoImage from "../../assets/logo.svg";
-import { BannerCreateAdd } from "../../components/BannerCreateAd";
+import { BannerCreateAd } from "../../components/BannerCreateAd";
+import { FormCreateAd } from "../../components/FormCreateAd";
 import { GameThumbnail } from "../../components/GameThumbnail";
-
 import "../../styles/main.css";
 
 const Home = () => {
@@ -12,10 +14,16 @@ const Home = () => {
   const [loading, setLoading] = useState(false);
 
   const fetchGames = async () => {
-    const response = await fetch("http://localhost:3333/games");
-    const data = await response.json();
-    console.log(data);
-    setGames(data);
+    try {
+      setLoading(true);
+      const response = await fetch("http://localhost:3333/games");
+      const data = await response.json();
+      setGames(data);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
@@ -38,7 +46,16 @@ const Home = () => {
           />
         ))}
       </div>
-      <BannerCreateAdd />
+      <Dialog.Root>
+        <BannerCreateAd />
+        <Dialog.Portal>
+          <Dialog.Overlay className="bg-black/60 inset-0 fixed"/>
+          <Dialog.Content className="bg-[#2A2634] fixed px-8 py-8 text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg w-[520px] shadow-lg shadow-black/25">
+            <Dialog.Title className="text-3xl font-black">Publique um anúncio</Dialog.Title>
+            <FormCreateAd />
+          </Dialog.Content>
+        </Dialog.Portal>
+      </Dialog.Root>
     </div>
   );
 };
