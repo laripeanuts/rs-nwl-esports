@@ -1,3 +1,4 @@
+
 import {
   Inter_400Regular,
   Inter_600SemiBold,
@@ -8,6 +9,7 @@ import { StatusBar } from "expo-status-bar";
 
 import { Background } from "./src/components/Background";
 import { Loading } from "./src/components/Loading";
+import { Routes } from "./src/routes";
 import { Home } from "./src/screens/Home";
 
 export default function App() {
@@ -23,7 +25,7 @@ export default function App() {
       <StatusBar
         style="auto"
       />
-      {fontsLoaded ? <Home /> : <Loading />}
+      {fontsLoaded ? <Routes /> : <Loading />}
     </Background>
   );
 }

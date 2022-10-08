@@ -4,6 +4,7 @@ import { THEME } from "../../theme";
 export const styles = StyleSheet.create({
   container: {
     marginRight: 24,
+    flex: 1
   },
   cover: {
     width: 240,
