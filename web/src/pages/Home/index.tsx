@@ -12,6 +12,7 @@ import "../../styles/main.css";
 const Home = () => {
   const [games, setGames] = useState<GameType[]>([]);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("")
 
   const fetchGames = async () => {
     try {
@@ -21,9 +22,35 @@ const Home = () => {
       setGames(data);
     } catch (error) {
       console.log(error);
+      setError("Ocorreu um erro ao buscar os dados :(")
     } finally {
       setLoading(false);
     }
+  };
+
+  const loadGames = () => {
+    if (error) {
+      return (
+        <div className="text-white">
+          {error}
+        </div>
+      )
+    }
+
+    return (
+      <div className="grid grid-cols-6 gap-6 mt-10">
+        {
+          games.map((game) => (
+            <GameThumbnail
+              key={game.id}
+              name={game.title}
+              advQuantity={game._count.ads}
+              src={game.bannerUrl}
+            />
+          ))
+        }
+      </div>
+    )
   };
 
   useEffect(() => {
@@ -36,15 +63,8 @@ const Home = () => {
       <h1 className="text-6xl text-white font-black m-10">
         Seu <span className="bg-duo-gradient text-transparent bg-clip-text">duo</span> está aqui.
       </h1>
-      <div className="grid grid-cols-6 gap-6 mt-10">
-        {loading ? null : games.map((game) => (
-          <GameThumbnail
-            key={game.id}
-            name={game.title}
-            advQuantity={game._count.ads}
-            src={game.bannerUrl}
-          />
-        ))}
+      <div className="mx-auto justify-center">
+        {loading ? null : loadGames()}
       </div>
       <Dialog.Root>
         <BannerCreateAd />

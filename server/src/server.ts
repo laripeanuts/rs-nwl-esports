@@ -1,4 +1,4 @@
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient } from '@prisma/client';
 import cors from "cors";
 import express from "express";
 
@@ -49,7 +49,7 @@ app.get('/games/:id/ads', async (request, response) => {
     },
   });
 
-  const adsFormatted = ads.map((ad) => ({
+  const adsFormatted = ads.map((ad: any) => ({
     ...ad,
     weekDays: ad.weekDays.split(','),
     hourStart: convertMinuteString(ad.hourStart),
@@ -77,9 +77,9 @@ app.get('/ads/:id/discord', async (request, response) => {
 
 app.post('/games/:id/ads', async (request, response) => {
   const gameId: string = request.params.id;
-  const body = request.body;
+  const body: any = request.body;
 
-  const ad = await prisma.ad.create({
+  const ad: any = await prisma.ad.create({
     data: {
       gameId,
       name: body.name,
