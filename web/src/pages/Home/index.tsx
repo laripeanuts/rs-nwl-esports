@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 
 import * as Dialog from "@radix-ui/react-dialog";
@@ -18,9 +19,8 @@ const Home = () => {
   const fetchGames = async () => {
     try {
       setLoading(true);
-      const response = await fetch("http://localhost:3333/games");
-      const data = await response.json();
-      setGames(data);
+      const response = await axios(`http://localhost:3333/games`);
+      setGames(response.data);
     } catch (error) {
       console.log(error);
       setError("Ocorreu um erro ao buscar os dados :(")
@@ -60,11 +60,13 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="max-w-[1344px] mx-auto flex flex-col items-center my-20 px-10">
-      <img src={logoImage} alt="logo" />
-      <h1 className="text-6xl text-white font-black m-10">
-        Seu <span className="bg-duo-gradient text-transparent bg-clip-text">duo</span> está aqui.
-      </h1>
+    <div className="max-w-[1344px] mx-auto flex flex-col items-center my-[40px] px-10">
+      <div className="flex flex-row mx-auto items-center justify-between gap-4">
+        <img src={logoImage} alt="logo" />
+        <h1 className="text-6xl text-white font-black m-10">
+          Seu <span className="bg-duo-gradient text-transparent bg-clip-text">duo</span> está aqui.
+        </h1>
+      </div>
       <div className="mx-auto justify-center">
         {loading ? null : loadGames()}
       </div>
@@ -73,7 +75,7 @@ const Home = () => {
         <Modal
           title="Publique um anúncio"
         >
-          <FormCreateAd />
+          <FormCreateAd games={games} />
         </Modal>
       </Dialog.Root>
     </div>
