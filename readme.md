@@ -56,11 +56,37 @@ Develop a project that applied the fundamental concepts of React, React Native, 
 - [x] Show a list of games with ads
 - [x] Create a modal to add new ad
 
-<!-- ## 🥳 Web Application
+## 👩🏻‍💻 My additions
 
-<p align="left">
-  <img src="./.github/tictactoe.gif" alt="start" width="250">
-</p> -->
+- [x] Page and File structures
+- [x] Create a modal to each game showing the ads
+- [x] Create a ad card component
+
+## 🥳 Application
+
+### Web
+
+<p align="center">
+  <img src="./.github/web-1.png" alt="start" width="250">
+  <img src="./.github/web-2.png" alt="start" width="250">
+  <img src="./.github/web-3.png" alt="start" width="250">
+</p>
+
+### Mobile
+
+<p align="center">
+  <img src="./.github/mobile-1.jpg" alt="start" height="250">
+  <img src="./.github/mobile-2.jpg" alt="start" height="250">
+  <img src="./.github/mobile-3.jpg" alt="start" height="250">
+  <img src="./.github/mobile-4.jpg" alt="start" height="250">
+</p>
+
+### Server
+
+<p align="center">
+  <img src="./.github/server-1.png" alt="start" height="150">
+  <img src="./.github/server-2.png" alt="start" height="150">
+</p>
 
 ## 💻 Made with
 
@@ -70,6 +96,12 @@ Develop a project that applied the fundamental concepts of React, React Native, 
 [![NODEJS](https://img.shields.io/badge/NodeJS-44873D?style=for-the-badge&logo=nodejs&logoColor=white)](https://pt-br.reactjs.org/)
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
+
+## 🛠️ Tools
+
+[![IDE](https://img.shields.io/badge/Visual_studio_code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)](https://code.visualstudio.com/)
+[![INSOMNIA](https://img.shields.io/badge/Insomnia-4E56BF?style=for-the-badge&logo=insomnia&logoColor=white)](https://pop.system76.com/)
+[![LINUX](https://img.shields.io/badge/Linux-000000?style=for-the-badge&logo=linux&logoColor=white)](https://pop.system76.com/)
 
 ## 🦸‍♂️ Support libs
 
@@ -146,10 +178,5 @@ Inicie localmente
 ```bash
   expo start
 ```
-## 🛠️ Tools
-
-[![IDE](https://img.shields.io/badge/Visual_studio_code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)](https://code.visualstudio.com/)
-[![INSOMNIA](https://img.shields.io/badge/Insomnia-4E56BF?style=for-the-badge&logo=insomnia&logoColor=white)](https://pop.system76.com/)
-[![LINUX](https://img.shields.io/badge/Linux-000000?style=for-the-badge&logo=linux&logoColor=white)](https://pop.system76.com/)
 
 <p align="center">Copyright © 2022 ☕<a href="https://github.com/laripeanuts">laripeanuts</a></p>
